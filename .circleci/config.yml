@@ -18,22 +18,22 @@ jobs:
           command: |
             echo "--------- The images are being built ------------"
             docker build -t udagram-api-feed ./udagram-api-feed
-            docker tag udagram-api-feed thangtn8/udagram-api-feed:v4
+            docker tag udagram-api-feed thangtn8/udagram-api-feed:v6
             docker build -t udagram-api-user ./udagram-api-user
-            docker tag udagram-api-user thangtn8/udagram-api-user:v4
+            docker tag udagram-api-user thangtn8/udagram-api-user:v6
 
             docker build -t udagram-frontend ./udagram-frontend
-            docker tag udagram-frontend thangtn8/udagram-frontend:v4
+            docker tag udagram-frontend thangtn8/udagram-frontend:v6
             docker build -t udagram-reverseproxy ./udagram-reverseproxy
-            docker tag udagram-reverseproxy thangtn8/udagram-reverseproxy:v4
+            docker tag udagram-reverseproxy thangtn8/udagram-reverseproxy:v6
             echo "-------- All images succesfully built----------"
             echo " ------- login in to hub--------"
             echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             echo "-------------- Pushing images to dockerhub-------"
-            docker push thangtn8/udagram-api-feed:v4
-            docker push thangtn8/udagram-api-user:v4
-            docker push thangtn8/udagram-frontend:v4
-            docker push thangtn8/udagram-reverseproxy:v4
+            docker push thangtn8/udagram-api-feed:v6
+            docker push thangtn8/udagram-api-user:v6
+            docker push thangtn8/udagram-frontend:v6
+            docker push thangtn8/udagram-reverseproxy:v6
 workflows:
   default:
     jobs:
