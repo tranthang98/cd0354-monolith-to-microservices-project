@@ -28,7 +28,7 @@ jobs:
             docker tag udagram-reverseproxy thangtn8/udagram-reverseproxy:v1
             echo "-------- All images succesfully built----------"
             echo " ------- login in to hub--------"
-            echo "$DOCKER_PASSWORD" docker login -u "$DOCKER_USERNAME" -p $DOCKER_PASSWORD
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
             echo "-------------- Pushing images to dockerhub-------"
             docker push thangtn8/udagram-api-feed:v1
             docker push thangtn8/udagram-api-user:v1
