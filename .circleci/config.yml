@@ -8,7 +8,7 @@ jobs:
       - checkout
   build-docker:
     docker:
-      - image: circleci/node:18
+      - image: cimg/node:18
     steps:
       - checkout
       - run:
