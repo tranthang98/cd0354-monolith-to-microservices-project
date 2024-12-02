@@ -7,10 +7,12 @@ jobs:
     steps:
       - checkout
   build-docker:
-    docker:
-      - image: cimg/node:18.17.1
+    machine: true
     steps:
       - checkout
+      - run:
+          name: Start Docker Service
+          command: sudo service docker start
       - run:
           name: Build docker container for each microservices
           command: |
